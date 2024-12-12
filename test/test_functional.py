@@ -1,6 +1,7 @@
 import unittest
 import os
-from main import main
+from main import *
+from test.TestUtils import TestUtils
 
 class FunctionalTest(unittest.TestCase):
     def setUp(self):
@@ -84,13 +85,6 @@ class FunctionalTest(unittest.TestCase):
             print("Error in TestPredictions:", e)
             self.test_obj.yakshaAssert("TestPredictions", False, "functional")
             print("TestPredictions = Failed")
-
-
-# Mock TestUtils for testing purposes
-class TestUtils:
-    def yakshaAssert(self, test_name, result, test_type):
-        """Mock YakshaAssert implementation."""
-        print(f"{test_name}: {'Passed' if result else 'Failed'} ({test_type})")
 
 
 if __name__ == "__main__":
