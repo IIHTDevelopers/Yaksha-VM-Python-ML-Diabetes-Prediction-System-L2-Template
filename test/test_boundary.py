@@ -1,6 +1,7 @@
 import unittest
 import pandas as pd
-from main import main
+from main import *
+from test.TestUtils import TestUtils
 
 class BoundaryTest(unittest.TestCase):
     def setUp(self):
@@ -22,14 +23,6 @@ class BoundaryTest(unittest.TestCase):
         except Exception as e:
             print("Error in TestBoundaryAccuracy:", e)
             self.test_obj.yakshaAssert("TestBoundaryAccuracy", False, "boundary")
-
-
-
-# Mock TestUtils for testing purposes
-class TestUtils:
-    def yakshaAssert(self, test_name, result, test_type):
-        """Mock YakshaAssert implementation."""
-        print(f"{test_name}: {'Passed' if result else 'Failed'} ({test_type})")
 
 
 if __name__ == "__main__":
